@@ -30,7 +30,9 @@ export class ServerCardComponent implements OnInit {
     if (!this.labelFromParant) {
       this.form = new FormGroup({
         name: new FormControl('', [
-          Validators.minLength(5)
+          Validators.minLength(5),
+          Validators.required,
+          Validators.pattern(/[\S]/)
         ]),
       });
     }
