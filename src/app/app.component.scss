@@ -4,6 +4,21 @@ mat-toolbar {
 
 mat-toolbar {
     justify-content: space-between;
+
+    .logo{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+            height: 40px;
+            margin-right: 8px;
+        }
+
+        p {
+            cursor: pointer;
+        }
+    }
 }
 
 footer {
