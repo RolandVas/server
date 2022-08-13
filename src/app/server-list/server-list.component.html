@@ -1,0 +1,9 @@
+<div class="server-list">
+    <h2 *ngIf="!labelChack">Label check: off</h2>
+    <h2 *ngIf="labelChack">Label check: on</h2>
+    <button (click)="labelValidation()">Chack labels</button>
+
+    <div class="server-cards">
+        <app-server-card *ngFor="let server of servers" [server]="server"  [labelFromParant]="labelChack"></app-server-card>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+app-server-card {
+    margin-top: 16px;
+    width: 30%;
+    min-width: 100px;
+    height: 300px;
+}
+
+.server-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.server-list {
+    margin-bottom: 200px;
+    margin-top: 18px;
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    button {
+        width: 150px;
+        height: 50px;
+        border-radius: 25px;
+        cursor: pointer;
+        border: none;
+        font-size: 14px;
+        background-color: var(--label-btn-color);
+        color: var(--white-color);
+
+        &:hover {
+            background-color: var(--label-btn-hover-color);
+            color: var(--white-color);
+        }
+    }
+}
+
+@media (max-width: 855px) {
+
+    .server-cards {
+        align-items: center;
+        flex-wrap: unset;
+        flex-direction: column;
+    }
+
+    app-server-card {
+        width: 100%;
+        height: unset;
+    }
+
+    .server-list {
+        margin-bottom: 250px;
+    }
+}

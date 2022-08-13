@@ -1,0 +1,33 @@
+<mat-card class="card">
+
+  <img class="mobil" mat-card-image src="/assets/icon/server.png">
+
+  <mat-card-title>
+    <form *ngIf="labelFromParant" [formGroup]="form">
+      <div>
+        <input [(ngModel)]="server.label" type="text" formControlName="name">
+      </div>
+      <p class="error" *ngIf="!form.valid">
+        Label muss mindestens 5 Zeichen lang sein. <br>
+        Label ist aktuell {{ server.label.length }} Zeichen lang.
+      </p>
+      <p class="correct" *ngIf="form.valid">
+        Label ist {{ server.label.length }} Zeichen lang. <br>
+      </p>
+    </form>
+
+    <input *ngIf="!labelFromParant" [(ngModel)]="server.label" type="text" >
+  </mat-card-title>
+
+  <div *ngIf="isChecked" class="status">
+    <p class="mobil">Server status: Online</p>
+    <img src="/assets/icon/online.png">
+  </div>
+
+  <div *ngIf="!isChecked" class="status">
+    <p class="mobil">Server status: Offline</p>
+    <img src="/assets/icon/offline.png">
+  </div>
+
+  <mat-slide-toggle [(ngModel)]="isChecked"></mat-slide-toggle>
+</mat-card>
